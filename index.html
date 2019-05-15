@@ -18,7 +18,7 @@
             background-color: beige;
         }
 
-        div {
+        #hamMenu {
             position: fixed;
             top: 1vh;
             right: 1vh;
@@ -29,7 +29,7 @@
         }
 
         /* Wszystkie selektory z klasą .active można też napisać z pseudoklasą :hover, tj. można tę klasę zastąpić tą pesudoklasą, by ikona obracała się i zmieniała po najechaniu zamiast po kliknięciu */
-        div.active {
+        #hamMenu.active {
             transform: rotate(180deg);
             transition: .4s linear;
         }
@@ -45,7 +45,7 @@
             transition: top .2s .4s linear, bottom .2s .4s linear, opacity .2s .2s linear, transform .2s linear;
         }
 
-        body>div.active>span {
+        body>#hamMenu.active>span {
             transition: top .2s .4s linear, bottom.2s .4s linear, opacity .2s .6s linear, transform .2s .8s linear;
         }
 
@@ -58,16 +58,16 @@
             bottom: 0;
         }
 
-        div.active span:first-child {
+        #hamMenu.active span:first-child {
             top: calc(50% - .5vh);
             transform: rotate(45deg);
         }
 
-        div.active span:nth-of-type(2) {
+        #hamMenu.active span:nth-of-type(2) {
             opacity: 0;
         }
 
-        div.active span:last-child {
+        #hamMenu.active span:last-child {
             bottom: calc(50% - .5vh);
             transform: rotate(-45deg);
         }
@@ -75,18 +75,18 @@
 </head>
 
 <body>
-    <div>
+    <div id="hamMenu">
         <span></span>
         <span></span>
         <span></span>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $("div").on("click", function () {
+        $("#hamMenu").on("click", function () {
             jQuery(this).toggleClass("active");
         });
 
-        // document.querySelector("div").addEventListener("click", function () {
+        // document.querySelector("#hamMenu").addEventListener("click", function () {
         //     this.classList.toggle("active");
         // });
     </script>
